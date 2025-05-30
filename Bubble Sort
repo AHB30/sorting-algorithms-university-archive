@@ -1,0 +1,16 @@
+def bubble_sort(array):
+    is_sorted = False           # Flag to monitor if the array is already sorted
+    iteration = 0               # Counts the number of passes through the array
+    print(f'Initial array: {array}')
+    
+    while not is_sorted:        # Continue looping until no swaps occur
+        is_sorted = True        # Assume sorted; will be disproved if any swap happens
+        
+        for i in range(len(array) - 1):
+            if array[i] > array[i + 1]:
+                # Swap adjacent elements if they are in the wrong order
+                array[i], array[i + 1] = array[i + 1], array[i]
+                is_sorted = False  # A swap means the array wasn’t sorted
+                print(f'Iteration {iteration}, swap performed:')
+                print(array)
+        iteration += 1
